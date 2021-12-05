@@ -1,0 +1,7 @@
+{
+  "name": "Pocasi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
