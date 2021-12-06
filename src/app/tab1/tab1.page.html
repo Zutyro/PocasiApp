@@ -10,13 +10,18 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title>
-        <ion-datetime displayFormat="DDDD MMM D, YYYY | HH:MM" [(ngModel)]="myDate" readonly="true"></ion-datetime>
+        <ion-datetime displayFormat="DDDD MMM D, YYYY | hh:mm" [(ngModel)]="myDate" readonly="true"></ion-datetime>
       </ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      {{ teplota }}
     </ion-card-content>
   </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="RefreshPage()">
+      <ion-icon name="refresh"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

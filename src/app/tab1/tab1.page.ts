@@ -9,7 +9,12 @@ import {OpenweathermapService} from '../api/openweathermap.service';
 export class Tab1Page {
 
   myDate: String = new Date().toISOString();
+  teplota: String = this.weatherService.getWeather('London','068e4067b1fb55fde38d03b01d82c225')['main']/*['temp']*/;
 
-  constructor(/*private weatherService: OpenweathermapService*/) {}
+  constructor(private weatherService: OpenweathermapService) {
+  }
 
+  public RefreshPage(): void{
+    this.myDate = new Date().toISOString();
+  }
 }
