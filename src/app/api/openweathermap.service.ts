@@ -10,6 +10,6 @@ export class OpenweathermapService {
 
   public getWeather(city: String, key: String) 
   {
-    return this.http.get('api.openweathermap.org/data/2.5/weather?q='+city+'&appid='+{key});
+    return this.http.get('https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid='+key+'&units=metric');
   }
 }

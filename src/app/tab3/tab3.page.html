@@ -1,7 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title *ngIf="lang == 'CS' || lang == null">
       Nastavení
+    </ion-title>
+    <ion-title *ngIf="lang == 'EN'">
+      Settings
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,4 +16,14 @@
     </ion-toolbar>
   </ion-header>
 
+
+  <ion-card>
+    <ion-button (click)="ChangeToEnglish()">
+      <ion-label>English</ion-label>
+    </ion-button>
+  
+    <ion-button (click)="ChangeToCzech()">
+      <ion-label>Čeština</ion-label>
+    </ion-button>
+  </ion-card>
 </ion-content>

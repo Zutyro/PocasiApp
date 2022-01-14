@@ -1,7 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title *ngIf="lang == 'CS' || lang == null">
       O nás
+    </ion-title>
+    <ion-title *ngIf="lang == 'EN'">
+      About us
     </ion-title>
   </ion-toolbar>
 </ion-header>

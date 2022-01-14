@@ -1,7 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title *ngIf="lang == 'CS' || lang == null">
       Předpověď
+    </ion-title>
+    <ion-title *ngIf="lang == 'EN'">
+      Forecast
     </ion-title>
   </ion-toolbar>
 </ion-header>

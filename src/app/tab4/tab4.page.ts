@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-tab4',
   templateUrl: './tab4.page.html',
   styleUrls: ['./tab4.page.scss'],
 })
-export class Tab4Page implements OnInit {
+export class Tab4Page {
 
-  constructor() { }
+  lang: string = '';
+  constructor(private storage: Storage) {
+  }
 
-  ngOnInit() {
+  ionViewWillEnter(){
+    this.CheckLanguage();
+  }
+
+  public async CheckLanguage(){
+    this.storage.get('lang')
+    .then(
+    data => {console.log(data); this.lang = data},
+    error => console.error(error),
+  );
   }
 
 }
