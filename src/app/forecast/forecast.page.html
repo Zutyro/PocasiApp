@@ -1,12 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+    </ion-buttons>
     <ion-title *ngIf="lang == 'CS' || lang == null">
-      O nás
+      Předpověď - detaily
     </ion-title>
     <ion-title *ngIf="lang == 'EN'">
-      About us
+      Forecast - details
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
 </ion-content>

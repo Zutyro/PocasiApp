@@ -13,7 +13,17 @@ const routes: Routes = [
       },
       {
         path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        children:[
+          {
+            path:'',
+            loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+          },
+          {
+            path:':id',
+            loadChildren: () => import('../forecast/forecast.module').then( m => m.ForecastPageModule)
+          }
+        ]
+        
       },
       {
         path: 'tab3',

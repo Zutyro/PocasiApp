@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -7,16 +8,16 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-  
-  lang: string = '';
-  constructor(private storage: Storage) {}
 
+  lang: string = '';
+  constructor(private storage: Storage, private router: Router) {}
   public async ChangeToEnglish(){
     this.storage.set('lang', 'EN')
     .then(
     () => console.log('Stored item!'),
     error => console.error('Error storing item', error)
   );
+  this.router.navigateByUrl(`/tabs`);
   }
 
   public async ChangeToCzech(){
@@ -25,6 +26,7 @@ export class Tab3Page {
     () => console.log('Stored item!'),
     error => console.error('Error storing item', error)
   );
+  this.router.navigateByUrl(`/tabs`);
   }
 
 

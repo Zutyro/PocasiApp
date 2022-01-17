@@ -13,20 +13,29 @@ export class Tab1Page {
   mesto: String = 'London';
   myDate: String = '';
   teplota: String = '';
+  lastRefresh: number = 0;
+  newRefresh: number = 0;
   constructor(private weatherService: OpenweathermapService, private storage: Storage) {
-    this.myDate = new Date().toISOString();
-    /*this.weatherService.getWeather(this.mesto,'068e4067b1fb55fde38d03b01d82c225').subscribe( (data) => 
+    /*this.myDate = new Date().toISOString();
+    this.weatherService.getWeather(this.mesto).subscribe( (data) => 
     {
       this.teplota = data['main']['temp'];
-    });*/
+    });
+    this.SaveLastRefresh();
+    this.lastRefresh = this.newRefresh;*/
+    this.RefreshPage();
   }
 
   public RefreshPage(): void{
     this.myDate = new Date().toISOString();
-    this.weatherService.getWeather(this.mesto,'068e4067b1fb55fde38d03b01d82c225').subscribe( (data) => 
-    {
-      this.teplota = data['main']['temp'];
-    });
+    this.newRefresh = +new Date();
+    if(this.lastRefresh+10000 < this.newRefresh){
+      this.weatherService.getWeather(this.mesto).subscribe( (data) => 
+      {
+        this.teplota = data['main']['temp'];
+      });
+      this.lastRefresh = this.newRefresh;
+    }
   }
 
   ionViewWillEnter(){
@@ -36,8 +45,8 @@ export class Tab1Page {
   public async CheckLanguage(){
     this.storage.get('lang')
     .then(
-    data => {console.log(data); this.lang = data},
-    error => console.error(error),
+      data => {console.log(data); this.lang = data},
+      error => console.error(error),
   );
   }
 }
