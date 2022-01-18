@@ -6,7 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OpenweathermapService {
 
-  key: String = "068e4067b1fb55fde38d03b01d82c225";
+  keyold: String = '2eb14c4eb129f7e4c8b6b06402bd8a1e';
+  key2: String = '039959f62f01c78181a15ba0f5a9b169';
+  key: String = this.key2;
 
   constructor(private http: HttpClient) { }
 
@@ -15,8 +17,8 @@ export class OpenweathermapService {
     return this.http.get('https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid='+this.key+'&units=metric');
   }
 
-  public getForecast(city: String) 
+  public getForecast(lon: String, lat: String) 
   {
-    return this.http.get('http://api.openweathermap.org/data/2.5/forecast?q='+city+'&appid='+this.key+'&units=metric');
+    return this.http.get('https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lon+'&appid='+this.key+'&units=metric&exclude=current,minutely,hourly,alerts');
   }
 }

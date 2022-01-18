@@ -9,4 +9,32 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <div *ngIf="lang == 'CS' || lang == null">
+    <ion-card expand="full">
+      <ion-card-header>
+        <ion-card-title>
+          <div>Aplikaci vytvořil</div>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div>Tomáš Turecký</div>
+        <div>Pro Faukltu Aplikované Informatiky - Univerzita Tomáše Bati ve Zlíně</div>
+        <div>Předmět Mobilní Aplikace</div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="lang == 'EN'">
+    <ion-card expand="full">
+      <ion-card-header>
+        <ion-card-title>
+          <div>App made by</div>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div>Tomáš Turecký</div>
+        <div>For Faculty of Applied Informatics - Univerity of Tomas Bata in Zlin</div>
+        <div>Mobile Applications Class</div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

@@ -10,6 +10,79 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-button expand="full" routerLink="/tabs/tab2/42" routerDirection="forward">Otevři detaily</ion-button>
-  <ion-card expand="full" routerLink="/tabs/tab2/42" routerDirection="forward">Otevři detaily</ion-card>
+  <ion-card expand="full" routerLink="/tabs/tab2/0" routerDirection="forward">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-datetime displayFormat="D/M, YYYY" [(ngModel)]="date1String" readonly="true"></ion-datetime>
+        <div *ngIf="lang == 'CS' || lang == null">
+          <div>Teplota: {{ teplota1 }}&deg;C</div>
+          <div>Počasí: <ion-img [src]="ikona1" style="height: 60px; width: 60px;" alt='offline'></ion-img></div>
+        </div>
+        <div *ngIf="lang == 'EN'">
+          <div>Temperature: {{ teplota1 }}&deg;C</div>
+          <div>Weather: <ion-img [src]="ikona1" style="height: 60px; width: 60px;" alt='offline'></ion-img></div>
+        </div>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card expand="full" routerLink="/tabs/tab2/1" routerDirection="forward">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-datetime displayFormat="D/M, YYYY" [(ngModel)]="date2String" readonly="true"></ion-datetime>
+        <div *ngIf="lang == 'CS' || lang == null">
+          <div>Teplota: {{ teplota2 }}&deg;C</div>
+          <div>Počasí: <ion-img [src]="ikona2" style="height: 60px; width: 60px;" alt='offline'></ion-img></div>
+        </div>
+        <div *ngIf="lang == 'EN'">
+          <div>Temperature: {{ teplota2 }}&deg;C</div>
+          <div>Weather: <ion-img [src]="ikona2" style="height: 60px; width: 60px;" alt='offline'></ion-img></div>
+        </div>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card expand="full" routerLink="/tabs/tab2/2" routerDirection="forward">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-datetime displayFormat="D/M, YYYY" [(ngModel)]="date3String" readonly="true"></ion-datetime>
+        <div *ngIf="lang == 'CS' || lang == null">
+          <div>Teplota: {{ teplota3 }}&deg;C</div>
+          <div>Počasí: <ion-img [src]="ikona3" style="height: 60px; width: 60px;" alt='offline'></ion-img></div>
+        </div>
+        <div *ngIf="lang == 'EN'">
+          <div>Temperature: {{ teplota3 }}&deg;C</div>
+          <div>Weather: <ion-img [src]="ikona3" style="height: 60px; width: 60px;" alt='offline'></ion-img></div>
+        </div>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card expand="full" routerLink="/tabs/tab2/3" routerDirection="forward">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-datetime displayFormat="D/M, YYYY" [(ngModel)]="date4String" readonly="true"></ion-datetime>
+        <div *ngIf="lang == 'CS' || lang == null">
+          <div>Teplota: {{ teplota4 }}&deg;C</div>
+          <div>Počasí: <ion-img [src]="ikona4" style="height: 60px; width: 60px;" alt='offline'></ion-img></div>
+        </div>
+        <div *ngIf="lang == 'EN'">
+          <div>Temperature: {{ teplota4 }}&deg;C</div>
+          <div>Weather: <ion-img [src]="ikona4" style="height: 60px; width: 60px;" alt='offline'></ion-img></div>
+        </div>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card expand="full" routerLink="/tabs/tab2/4" routerDirection="forward">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-datetime displayFormat="D/M, YYYY" [(ngModel)]="date5String" readonly="true"></ion-datetime>
+        <div *ngIf="lang == 'CS' || lang == null">
+          <div>Teplota: {{ teplota5 }}&deg;C</div>
+          <div>Počasí: <ion-img [src]="ikona5" style="height: 60px; width: 60px;" alt='offline'></ion-img></div>
+        </div>
+        <div *ngIf="lang == 'EN'">
+          <div>Temperature: {{ teplota5 }}&deg;C</div>
+          <div>Weather: <ion-img [src]="ikona5" style="height: 60px; width: 60px;" alt='offline'></ion-img></div>
+        </div>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
 </ion-content>

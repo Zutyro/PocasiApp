@@ -11,7 +11,7 @@ export class Tab3Page {
 
   lang: string = '';
   constructor(private storage: Storage, private router: Router) {}
-  public async ChangeToEnglish(){
+  public ChangeToEnglish(){
     this.storage.set('lang', 'EN')
     .then(
     () => console.log('Stored item!'),
@@ -20,7 +20,7 @@ export class Tab3Page {
   this.router.navigateByUrl(`/tabs`);
   }
 
-  public async ChangeToCzech(){
+  public ChangeToCzech(){
     this.storage.set('lang', 'CS')
     .then(
     () => console.log('Stored item!'),
@@ -34,7 +34,7 @@ export class Tab3Page {
     this.CheckLanguage();
   }
 
-  public async CheckLanguage(){
+  public CheckLanguage(){
     this.storage.get('lang')
     .then(
     data => {console.log(data); this.lang = data},

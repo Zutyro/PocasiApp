@@ -27,10 +27,30 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title *ngIf="lang == 'CS' || lang == null">
+        Počasí: <ion-img [src]="ikona" style="height: 60px; width: 60px;" alt='offline'></ion-img>
+      </ion-card-title>
+      <ion-card-title *ngIf="lang == 'EN'">
+        Weather: <ion-img [src]="ikona" style="height: 60px; width: 60px;" alt='offline'></ion-img>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title *ngIf="lang == 'CS' || lang == null">
         Teplota: {{ teplota }}&deg;C
       </ion-card-title>
       <ion-card-title *ngIf="lang == 'EN'">
         Temperature: {{ teplota }}&deg;C
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title *ngIf="lang == 'CS' || lang == null">
+        Rychlost větru: {{ teplota }} KM/H
+      </ion-card-title>
+      <ion-card-title *ngIf="lang == 'EN'">
+        Wind speed: {{ teplota }} KM/H
       </ion-card-title>
     </ion-card-header>
   </ion-card>

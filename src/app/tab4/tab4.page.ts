@@ -16,7 +16,7 @@ export class Tab4Page {
     this.CheckLanguage();
   }
 
-  public async CheckLanguage(){
+  public CheckLanguage(){
     this.storage.get('lang')
     .then(
     data => {console.log(data); this.lang = data},
