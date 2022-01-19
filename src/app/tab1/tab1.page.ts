@@ -115,6 +115,7 @@ export class Tab1Page {
         this.pocasi = JSON.parse(data);
         this.teplota = this.pocasi['main']['temp'];
         this.vitr = this.pocasi['wind']['speed'];
+        this.ikona = "/assets/weather-icons/" + this.pocasi['weather']['0']['icon'] + ".png";
       },
       error => console.error(error),
   );
