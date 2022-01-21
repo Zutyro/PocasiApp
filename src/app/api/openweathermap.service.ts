@@ -6,9 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OpenweathermapService {
 
-  keyold: String = '2eb14c4eb129f7e4c8b6b06402bd8a1e';
-  key2: String = '039959f62f01c78181a15ba0f5a9b169';
-  key: String = this.key2;
+  key: String = '2eb14c4eb129f7e4c8b6b06402bd8a1e';
 
   constructor(private http: HttpClient) { }
 
